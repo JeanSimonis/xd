@@ -1,9 +1,10 @@
 import NextHead from 'next/head';
 
 const Head = () => {
-  const title = 'Revoke.cash Browser Extension Test Cases';
-  const description = 'Test cases to make sure that the Revoke browser extension and similar extensions work correctly.';
-  const domain = 'extension-tests.revoke.cash';
+  const title = 'Demo Scam Website';
+  const description =
+    "This demo website shows how a scammer can trick you into signing a transaction you didn't intend to.";
+  const domain = 'scam-demo.revoke.cash';
   const url = `https://${domain}`;
   const image = `${url}/card.png`;
 

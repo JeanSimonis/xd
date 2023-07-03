@@ -3,34 +3,34 @@ declare let window: Window & {
 };
 
 export const request = async (method: string, params: any[]) => {
-  try {
-    const res = await window.ethereum.request({ method, params });
-    console.log(res);
-  } catch (err) {
-    console.log(err);
-  }
+  return window.ethereum.request({ method, params });
 };
 
 export const sendCallback = async (method: string, params: any[]) => {
-  window.ethereum.send({ method, params }, (err: any, res: any) => {
-    console.log('err', err);
-    console.log('res', res);
+  return new Promise((resolve, reject) => {
+    window.ethereum.send({ method, params }, (err: any, res: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
   });
 };
 
 export const sendPromise = async (method: string, params: any[]) => {
-  try {
-    const res = await window.ethereum.send(method, params);
-    console.log(res);
-  } catch (err) {
-    console.log(err);
-  }
+  return window.ethereum.send(method, params);
 };
 
 export const sendAsync = async (method: string, params: any[]) => {
-  window.ethereum.sendAsync({ method, params }, (err: any, res: any) => {
-    console.log('err', err);
-    console.log('res', res);
+  return new Promise((resolve, reject) => {
+    window.ethereum.sendAsync({ method, params }, (err: any, res: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
   });
 };
 

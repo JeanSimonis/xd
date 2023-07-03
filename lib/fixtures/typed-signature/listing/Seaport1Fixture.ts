@@ -52,7 +52,7 @@ export class Seaport1Fixture extends Fixture {
         offer: [
           {
             itemType: '2',
-            token: '0x922dc160f2ab743312a6bb19dd5152c1d3ecca33',
+            token: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
             identifierOrCriteria: '176',
             startAmount: '1',
             endAmount: '1',
